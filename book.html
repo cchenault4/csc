@@ -1,9 +1,215 @@
 ---
-layout: default 
-title: The Book Title 
-permalink: /book/
-description: The book description. Blah blah blah.
+layout: default
+title: Book Title One
 ---
 
-<h2>{{ page.title }}</h2>
-<p>{{ page.description }}</p>
+<style>
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 0 1rem 3rem;
+  }
+
+  .book-hero {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .book-cover {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .book-cover-placeholder {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    opacity: 0.75;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .book-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+  }
+
+  .book-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin: 0 0 1rem;
+  }
+
+  .book-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.7rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+  }
+
+  .button:hover {
+    text-decoration: none;
+    opacity: 0.92;
+  }
+
+  .button-primary {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .section {
+    margin-top: 2rem;
+  }
+
+  .section h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .section p,
+  .section li {
+    line-height: 1.7;
+  }
+
+  .section ul {
+    padding-left: 1.25rem;
+  }
+
+  .quote {
+    border-left: 4px solid rgba(128, 128, 128, 0.35);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .muted {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 760px) {
+    .book-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .book-cover,
+    .book-cover-placeholder {
+      max-width: 220px;
+    }
+
+    .details-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<div class="container">
+  <section class="book-hero">
+    <div>
+      <!-- Replace with your actual cover image if you have one -->
+      <img
+        class="book-cover"
+        src="{{ '/assets/img/books/book-one-cover.jpg' | relative_url }}"
+        alt="Book Title One cover"
+      >
+    </div>
+
+    <div>
+      <div class="eyebrow">Book</div>
+      <h1 class="book-title">Book Title One</h1>
+      <p class="book-subtitle">A short, compelling subtitle goes here.</p>
+
+      <div class="book-meta">
+        <span>By Chris Chenault</span>
+        <span>Nonfiction</span>
+        <span>Coming Soon / Published 2026</span>
+      </div>
+
+      <p>
+        This is the main book pitch. Use 2–4 sentences to explain what the book is,
+        who it is for, and why it matters. Keep it direct and specific.
+      </p>
+
+      <div class="button-row">
+        <a class="button button-primary" href="#">Buy the Book</a>
+        <a class="button" href="#">Read Sample</a>
+        <a class="button" href="{{ '/books/' | relative_url }}">Back to Books</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About the Book</h2>
+    <p>
+      Expand on the core idea here. What problem does the book address? What question
+      does it answer? What lens does it use that other books miss?
+    </p>
+  </section>
+
+  <section class="section">
+    <h2>About the Author</h2>
+    <p>
+      Dr. Christopher S. Chenault M.D. write about all kinds of things.     
+    </p>
+  </section>
+
+</div>

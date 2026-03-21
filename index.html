@@ -3,7 +3,181 @@
 layout: default
 title: Dr. Christopher S. Chenault M.D.
 ---
+<style>
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
 
-<h1>{{ page.title }}</h1>
+  .author-hero {
+    margin: 1.5rem 0 2rem;
+  }
 
-This is a paragraph
+  .author-name {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+  }
+
+  .author-tagline {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin-bottom: 1rem;
+  }
+
+  .author-intro {
+    max-width: 48rem;
+    line-height: 1.7;
+  }
+
+  .section {
+    margin-top: 2.25rem;
+  }
+
+  .section h2 {
+    margin-bottom: 0.75rem;
+  }
+
+  .book-grid,
+  .link-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  .card {
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    border-radius: 10px;
+    padding: 1rem;
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .card h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .card p {
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0.65rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 1px solid rgba(128, 128, 128, 0.3);
+  }
+
+  .button:hover {
+    text-decoration: none;
+    opacity: 0.92;
+  }
+
+  .muted {
+    opacity: 0.8;
+  }
+
+  .author-photo {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  .featured-quote {
+    border-left: 4px solid rgba(128, 128, 128, 0.35);
+    padding-left: 1rem;
+    margin: 1rem 0 0;
+    font-style: italic;
+    opacity: 0.9;
+  }
+</style>
+
+<div class="container">
+<section class="author-hero">
+  <!-- Optional headshot -->
+  <!--
+  <img
+    class="author-photo"
+    src="{{ '/assets/img/chris.jpg' | relative_url }}"
+    alt="Chris Chenault"
+  >
+  -->
+
+  <div class="author-name">{{ page.title }}</div>
+  <div class="author-tagline">The Man • The Myth • The Legend</div>
+
+  <div class="author-intro">
+    <p>
+      I write about systems, technology, infrastructure, history, and the
+      long-term forces that shape civilization. My work is aimed at curious
+      readers who want clear thinking, practical insight, and big-picture
+      perspective.
+    </p>
+
+    <p>
+      This site is the home for my books, essays, notes, and ongoing projects.
+    </p>
+
+    <div class="button-row">
+      <a class="button" href="{{ '/books/' | relative_url }}">Browse Books</a>
+      <a class="button" href="{{ '/about/' | relative_url }}">About the Author</a>
+      <a class="button" href="{{ '/contact/' | relative_url }}">Contact</a>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Books</h2>
+
+  <div class="book-grid">
+    <article class="card">
+      <h3><a href="{{ '/books/book-one/' | relative_url }}">Book Title One</a></h3>
+      <p>
+        A short description of the book. Explain what it is about, who it is
+        for, and why someone should click through.
+      </p>
+      <a href="{{ '/books/book-one/' | relative_url }}">Read more →</a>
+    </article>
+
+    <article class="card">
+      <h3><a href="{{ '/books/book-two/' | relative_url }}">Book Title Two</a></h3>
+      <p>
+        Another short description. This can be a published book, a draft in
+        progress, or a project page.
+      </p>
+      <a href="{{ '/books/book-two/' | relative_url }}">Read more →</a>
+    </article>
+
+    <article class="card">
+      <h3><a href="{{ '/books/book-three/' | relative_url }}">Book Title Three</a></h3>
+      <p>
+        Add as many of these as you want. Keep the copy short and specific.
+      </p>
+      <a href="{{ '/books/book-three/' | relative_url }}">Read more →</a>
+    </article>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Stay in Touch</h2>
+  <p>
+    You can reach me through the
+    <a href="{{ '/contact/' | relative_url }}">contact page</a>.
+  </p>
+</section>
+</div>
