@@ -1,0 +1,16 @@
+---
+---
+@import "{{ site.theme }}";
+@import "main";
+
+.page-header {
+  background: linear-gradient(120deg, #155799, #159957);
+}
+
+h1 {
+  font-weight: 700;
+}
+
+section {
+  max-width: 800px;
+}
