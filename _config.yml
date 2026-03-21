@@ -25,7 +25,7 @@ baseurl: "/csc" # the subpath of your site, e.g. /blog
 url: "https://cchenault4.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 
 # Build settings
-theme: jekyll-theme-midnight 
+remote_theme: pages-themes/midnight@v0.2.0
 plugins:
   - jekyll-feed
   - jekyll-remote-theme
