@@ -1,4 +1,4 @@
 <nav>
-  <a href="{% link index.html %}" {% if page.url == "/" %} class="current"{% endif %}>Home</a>
-  <a href="{% link book.html %}" {% if page.url == "/book/" %} class="current"{% endif %}>Book</a>
+  <a href="{{ "/"  | relative_url }}" {% if page.url == "/" %} class="current"{% endif %}>Home</a>
+  <a href="{{ "/book" | relative_url }}" {% if page.url == "/book/" %} class="current"{% endif %}>Book</a>
 </nav>
