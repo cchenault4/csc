@@ -1,0 +1,135 @@
+---
+layout: default
+---
+
+<style>
+
+  .book-hero {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 2rem;
+    align-items: start;
+    margin: 2rem 0 2.5rem;
+  }
+
+  .book-cover {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+  }
+
+  .book-cover-placeholder {
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 2 / 3;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.25);
+    background: rgba(255, 255, 255, 0.04);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    opacity: 0.75;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  .eyebrow {
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    opacity: 0.7;
+    margin-bottom: 0.4rem;
+  }
+
+  .book-title {
+    font-size: 2.2rem;
+    line-height: 1.15;
+    margin: 0 0 0.5rem;
+  }
+
+  .book-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.85;
+    margin: 0 0 1rem;
+  }
+
+  .book-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    font-size: 0.95rem;
+    opacity: 0.8;
+    margin-bottom: 1.25rem;
+  }
+
+  .button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin: 1rem 0 0;
+  }
+
+  .quote {
+    border-left: 4px solid rgba(128, 128, 128, 0.35);
+    padding-left: 1rem;
+    margin: 1rem 0;
+    font-style: italic;
+    opacity: 0.9;
+  }
+
+  @media (max-width: 760px) {
+    .book-hero {
+      grid-template-columns: 1fr;
+    }
+
+    .book-cover,
+    .book-cover-placeholder {
+      max-width: 220px;
+    }
+  }
+</style>
+
+  <section class="book-hero">
+    <div class="book-cover">
+      <img
+        src="{{ page.image | relative_url }}"
+        alt="{{ page.title }}" />
+    </div>
+
+    <div>
+      <div class="eyebrow">Book</div>
+      <h1 class="book-title">{{ page.title }}</h1>
+      <p class="book-subtitle">{{ page.subtitle }}</p>
+
+      <div class="book-meta">
+        <span>By {{ site.author }}</span>
+        <span>{{ page.category }}</span>
+        <span>{{ page.published }}</span>
+      </div>
+
+      <p>{{ page.short-description }}</p>
+
+      <div class="button-row">
+        <a class="button button-primary" href="#">Buy the Book</a>
+        <a class="button" href="{{ '/' | relative_url }}">About the Author</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>About the Book</h2>
+    <p>{{ page.long-description }}</p>
+  </section>
+
+  <section class="section">
+    <h2>About the Author</h2>
+    <p>
+      {{ site.author }} writes about all kinds of things.     
+    </p>
+  </section>
+
